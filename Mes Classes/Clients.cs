@@ -43,14 +43,8 @@ namespace Gestion_Compte_Clients.Mes_Classes
                         cmd.Parameters.AddWithValue("@Prenom", clients.Prenom);
                         cmd.Parameters.AddWithValue("@Adresse", clients.Adresse);
                         cmd.Parameters.AddWithValue("@Telephone", clients.Telephone);
-                        if (clients != null)
-                        {
-                            MessageBox.Show("Veillez completer toutes les element demander Svp !!");
-                        }
-                        else
-                        {
-                            resultat = cmd.ExecuteNonQuery();
-                        }  
+                        
+                        resultat = cmd.ExecuteNonQuery(); 
                     }
                 }
                 catch (Exception ex)
@@ -110,7 +104,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
         public int SupprimerClient(Clients clients)
         {
             int resultat = 0;
-            string strQuery = "delete Achats where Nom=@Nom , Prenom=@Prenom";
+            string strQuery = "delete Clients where Nom=@Nom";
 
             if (data.OpenConnection())
             {
