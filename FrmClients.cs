@@ -85,5 +85,57 @@ namespace Gestion_Compte_Clients
                 MessageBox.Show("Un problème s'est produit, veuillez réessayer !!!");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Clients clients = new Clients();
+
+                bindingClass(clients);
+
+                Clients ClientInstance = new Clients();
+
+                int resultat = ClientInstance.ModifierClient(clients);
+                if (resultat > 0)
+                {
+                    MessageBox.Show("Modification Réussi");
+                }
+                else
+                {
+                    MessageBox.Show("La Modification a échoué");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Un problème s'est produit, veuillez réessayer !!!");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Clients clients = new Clients();
+
+                bindingClass(clients);
+
+                Clients ClientInstance = new Clients();
+
+                int resultat = ClientInstance.SupprimerClient(clients);
+                if (resultat > 0)
+                {
+                    MessageBox.Show("Suppression a Réussi");
+                }
+                else
+                {
+                    MessageBox.Show("La Suppression a échoué");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Un problème s'est produit, veuillez réessayer !!!");
+            }
+        }
     }
 }
