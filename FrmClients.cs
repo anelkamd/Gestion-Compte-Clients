@@ -48,7 +48,7 @@ namespace Gestion_Compte_Clients
                 command.ExecuteNonQuery();
 
             }
-            
+
         }
 
 
@@ -137,6 +137,22 @@ namespace Gestion_Compte_Clients
             catch (Exception)
             {
                 MessageBox.Show("Un problème s'est produit, veuillez réessayer !!!");
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Clients ClientInstance = new Clients();
+                List<Clients> clients = ClientInstance.GetClients();
+                dbClients.DataSource = null; // Réinitialiser la source de données
+                dbClients.DataSource = clients; // Définir la nouvelle source de données
+                dbClients.Refresh(); // Forcer le rafraîchissement de la DataGrid
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur de Chargement Article : " + ex.Message);
             }
         }
     }

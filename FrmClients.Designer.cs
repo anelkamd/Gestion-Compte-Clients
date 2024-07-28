@@ -37,13 +37,13 @@
             txtAdresse = new TextBox();
             label4 = new Label();
             txtTelephone = new TextBox();
-            dataGridView1 = new DataGridView();
+            dbClients = new DataGridView();
             pictureBox1 = new PictureBox();
             label5 = new Label();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dbClients).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -116,14 +116,15 @@
             txtTelephone.Size = new Size(271, 31);
             txtTelephone.TabIndex = 6;
             // 
-            // dataGridView1
+            // dbClients
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(27, 307);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(706, 180);
-            dataGridView1.TabIndex = 8;
+            dbClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dbClients.Location = new Point(27, 307);
+            dbClients.Name = "dbClients";
+            dbClients.RowHeadersWidth = 62;
+            dbClients.Size = new Size(706, 180);
+            dbClients.TabIndex = 8;
+            dbClients.CellContentClick += dataGridView1_CellContentClick;
             // 
             // pictureBox1
             // 
@@ -194,7 +195,7 @@
             Controls.Add(button1);
             Controls.Add(label5);
             Controls.Add(pictureBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dbClients);
             Controls.Add(label4);
             Controls.Add(txtTelephone);
             Controls.Add(label3);
@@ -208,7 +209,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Enregistrement Clients";
             Load += FrmClients_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dbClients).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -224,7 +225,7 @@
         private TextBox txtAdresse;
         private Label label4;
         private TextBox txtTelephone;
-        private DataGridView dataGridView1;
+        private DataGridView dbClients;
         private PictureBox pictureBox1;
         private Label label5;
         private Button button1;
