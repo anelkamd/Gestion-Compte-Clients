@@ -29,5 +29,11 @@ namespace Gestion_Compte_Clients
         {
 
         }
+
+        private void btnClients_Click(object sender, EventArgs e)
+        {
+            FrmClients frm = new FrmClients();
+            frm.Show();
+        }
     }
 }

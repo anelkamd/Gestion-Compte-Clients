@@ -121,6 +121,7 @@
             btnClients.SizeMode = PictureBoxSizeMode.Zoom;
             btnClients.TabIndex = 3;
             btnClients.TabStop = false;
+            btnClients.Click += btnClients_Click;
             // 
             // pictureBox4
             // 
