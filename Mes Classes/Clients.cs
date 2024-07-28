@@ -104,7 +104,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
         public int SupprimerClient(Clients clients)
         {
             int resultat = 0;
-            string strQuery = "delete Achats where Nom=@Nom , Prenom=@Prenom, Adresse=, Telephone=";
+            string strQuery = "delete Achats where Nom=@Nom , Prenom=@Prenom";
 
             if (data.OpenConnection())
             {
