@@ -67,7 +67,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
         public int ModifierClient(Clients clients)
         {
             int resultat = 0;
-            string strQuery = "INSERT INTO Clients ( Nom, Prenom, Adresse, Telephone) VALUES ( @Nom, @Prenom, @Adresse, @Telephone)";
+            string strQuery = "update Clients set Nom=@Nom, Prenom=@Prenom, Adresse=@Adresse, Telephone=@Telephone ";
 
             if (data.OpenConnection())
             {
