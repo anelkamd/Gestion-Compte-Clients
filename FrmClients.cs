@@ -30,7 +30,7 @@ namespace Gestion_Compte_Clients
             clients.Telephone = Convert.ToString(txtTelephone.Text);
         }
 
-        private void AjouterAchat(Clients clients)
+        private void EnregistrerClient(Clients clients)
         {
             string connectionString = "Votre_chaine_de_connexion";
 
@@ -39,7 +39,6 @@ namespace Gestion_Compte_Clients
                 string query = "INSERT INTO Clients ( Nom, Prenom, Adresse, Telephone) VALUES ( @Nom, @Prenom, @Adresse, @Telephone)";
                 SqlCommand command = new SqlCommand(query, connection);
 
-                //command.Parameters.AddWithValue("@IdAchat", achat.IdAchat);
                 command.Parameters.AddWithValue("@Nom", clients.Nom);
                 command.Parameters.AddWithValue("@Prenom", clients.Prenom);
                 command.Parameters.AddWithValue("@Adresse", clients.Adresse);
