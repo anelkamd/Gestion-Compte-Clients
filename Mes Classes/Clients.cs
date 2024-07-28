@@ -49,7 +49,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Erreur lors de l'insertion de l'Enregistrement : {ex.Message}");
+                    MessageBox.Show($"Erreur lors de l'Enregistrement : {ex.Message}");
                 }
                 finally
                 {
@@ -86,7 +86,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Erreur lors de l'insertion de l'Enregistrement : {ex.Message}");
+                    MessageBox.Show($"Erreur lors de la Modification : {ex.Message}");
                 }
                 finally
                 {
@@ -104,7 +104,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
         public int SupprimerClient(Clients clients)
         {
             int resultat = 0;
-            string strQuery = "INSERT INTO Clients ( Nom, Prenom, Adresse, Telephone) VALUES ( @Nom, @Prenom, @Adresse, @Telephone)";
+            string strQuery = "delete Achats where Nom=@Nom , Prenom=@Prenom, Adresse=, Telephone=";
 
             if (data.OpenConnection())
             {
