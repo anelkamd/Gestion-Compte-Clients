@@ -24,6 +24,10 @@ namespace Gestion_Compte_Clients.Mes_Classes
             Adresse = adresse;
             Telephone = telephone;
         }
+
+        private DataAccess data = new DataAccess();
+
+        
     }
 
 }

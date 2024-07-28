@@ -156,6 +156,7 @@
             button1.TabIndex = 11;
             button1.Text = "Enregistrer";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 

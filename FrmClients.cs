@@ -49,6 +49,7 @@ namespace Gestion_Compte_Clients
             }
         }
 
+
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -57,6 +58,32 @@ namespace Gestion_Compte_Clients
         private void FrmClients_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Clients clients = new Clients();
+
+                bindingClass(clients);
+
+                Clients ClientInstance = new Clients();
+
+                int resultat = ClientInstance.EnregistrerClient(clients);
+                if (resultat > 0)
+                {
+                    MessageBox.Show("Ajout Réussi");
+                }
+                else
+                {
+                    MessageBox.Show("L'ajout a échoué");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Un problème s'est produit, veuillez réessayer !!!");
+            }
         }
     }
 }
