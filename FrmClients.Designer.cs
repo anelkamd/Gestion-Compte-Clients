@@ -36,7 +36,7 @@
             label3 = new Label();
             txtAdresse = new TextBox();
             label4 = new Label();
-            textBox1 = new TextBox();
+            txtTelephone = new TextBox();
             dataGridView1 = new DataGridView();
             pictureBox1 = new PictureBox();
             label5 = new Label();
@@ -109,12 +109,12 @@
             label4.TabIndex = 7;
             label4.Text = "Telephone :";
             // 
-            // textBox1
+            // txtTelephone
             // 
-            textBox1.Location = new Point(162, 247);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(271, 31);
-            textBox1.TabIndex = 6;
+            txtTelephone.Location = new Point(162, 247);
+            txtTelephone.Name = "txtTelephone";
+            txtTelephone.Size = new Size(271, 31);
+            txtTelephone.TabIndex = 6;
             // 
             // dataGridView1
             // 
@@ -193,7 +193,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);
             Controls.Add(label4);
-            Controls.Add(textBox1);
+            Controls.Add(txtTelephone);
             Controls.Add(label3);
             Controls.Add(txtAdresse);
             Controls.Add(label2);
@@ -220,7 +220,7 @@
         private Label label3;
         private TextBox txtAdresse;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox txtTelephone;
         private DataGridView dataGridView1;
         private PictureBox pictureBox1;
         private Label label5;
