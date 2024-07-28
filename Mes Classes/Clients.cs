@@ -27,7 +27,116 @@ namespace Gestion_Compte_Clients.Mes_Classes
 
         private DataAccess data = new DataAccess();
 
-        
+        public int EnregistrerClient(Clients clients)
+        {
+            int resultat = 0;
+            string strQuery = "INSERT INTO Clients ( Nom, Prenom, Adresse, Telephone) VALUES ( @Nom, @Prenom, @Adresse, @Telephone)";
+
+            if (data.OpenConnection())
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand(strQuery, data.conn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@Nom", clients.Nom);
+                        cmd.Parameters.AddWithValue("@Prenom", clients.Prenom);
+                        cmd.Parameters.AddWithValue("@Adresse", clients.Adresse);
+                        cmd.Parameters.AddWithValue("@Telephone", clients.Telephone);
+
+                        resultat = cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erreur lors de l'insertion de l'Enregistrement : {ex.Message}");
+                }
+                finally
+                {
+                    data.CloseConnection();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Impossible d'ouvrir la connexion à la base de données.");
+            }
+
+            return resultat;
+        }
+
+        public int ModifierClient(Clients clients)
+        {
+            int resultat = 0;
+            string strQuery = "INSERT INTO Clients ( Nom, Prenom, Adresse, Telephone) VALUES ( @Nom, @Prenom, @Adresse, @Telephone)";
+
+            if (data.OpenConnection())
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand(strQuery, data.conn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@Nom", clients.Nom);
+                        cmd.Parameters.AddWithValue("@Prenom", clients.Prenom);
+                        cmd.Parameters.AddWithValue("@Adresse", clients.Adresse);
+                        cmd.Parameters.AddWithValue("@Telephone", clients.Telephone);
+
+                        resultat = cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erreur lors de l'insertion de l'Enregistrement : {ex.Message}");
+                }
+                finally
+                {
+                    data.CloseConnection();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Impossible d'ouvrir la connexion à la base de données.");
+            }
+
+            return resultat;
+        }
+
+        public int SupprimerClient(Clients clients)
+        {
+            int resultat = 0;
+            string strQuery = "INSERT INTO Clients ( Nom, Prenom, Adresse, Telephone) VALUES ( @Nom, @Prenom, @Adresse, @Telephone)";
+
+            if (data.OpenConnection())
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand(strQuery, data.conn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@Nom", clients.Nom);
+                        cmd.Parameters.AddWithValue("@Prenom", clients.Prenom);
+                        cmd.Parameters.AddWithValue("@Adresse", clients.Adresse);
+                        cmd.Parameters.AddWithValue("@Telephone", clients.Telephone);
+
+                        resultat = cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erreur lors de l'insertion de l'Enregistrement : {ex.Message}");
+                }
+                finally
+                {
+                    data.CloseConnection();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Impossible d'ouvrir la connexion à la base de données.");
+            }
+
+            return resultat;
+        }
     }
 
 }
