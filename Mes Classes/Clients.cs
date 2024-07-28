@@ -43,8 +43,16 @@ namespace Gestion_Compte_Clients.Mes_Classes
                         cmd.Parameters.AddWithValue("@Prenom", clients.Prenom);
                         cmd.Parameters.AddWithValue("@Adresse", clients.Adresse);
                         cmd.Parameters.AddWithValue("@Telephone", clients.Telephone);
+                        if (clients != null)
+                        {
+                            MessageBox.Show("Veillez completer toutes les element demander Svp !!");
+                        }
+                        else
+                        {
+                            resultat = cmd.ExecuteNonQuery();
+                        }
 
-                        resultat = cmd.ExecuteNonQuery();
+                        
                     }
                 }
                 catch (Exception ex)
