@@ -46,7 +46,9 @@ namespace Gestion_Compte_Clients
 
                 connection.Open();
                 command.ExecuteNonQuery();
+
             }
+            
         }
 
 
