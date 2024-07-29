@@ -5,10 +5,6 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gestion Compte Clients", "Gestion Compte Clients.csproj", "{55161E01-38A3-4E02-A215-9F13B1276B58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanqueAPI.Server", "..\BanqueAPI\BanqueAPI.Server\BanqueAPI.Server.csproj", "{EFE7F15F-5765-48D8-92EC-79F4EC37BDCA}"
-EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "banqueapi.client", "..\BanqueAPI\banqueapi.client\banqueapi.client.esproj", "{51FE0A4F-6C46-484D-A0EA-5857AF0D5A52}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,16 +15,6 @@ Global
 		{55161E01-38A3-4E02-A215-9F13B1276B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55161E01-38A3-4E02-A215-9F13B1276B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55161E01-38A3-4E02-A215-9F13B1276B58}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFE7F15F-5765-48D8-92EC-79F4EC37BDCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFE7F15F-5765-48D8-92EC-79F4EC37BDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFE7F15F-5765-48D8-92EC-79F4EC37BDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFE7F15F-5765-48D8-92EC-79F4EC37BDCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51FE0A4F-6C46-484D-A0EA-5857AF0D5A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51FE0A4F-6C46-484D-A0EA-5857AF0D5A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51FE0A4F-6C46-484D-A0EA-5857AF0D5A52}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{51FE0A4F-6C46-484D-A0EA-5857AF0D5A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51FE0A4F-6C46-484D-A0EA-5857AF0D5A52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51FE0A4F-6C46-484D-A0EA-5857AF0D5A52}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
