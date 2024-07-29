@@ -52,6 +52,8 @@ namespace Gestion_Compte_Clients
         }
 
 
+
+
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -59,7 +61,7 @@ namespace Gestion_Compte_Clients
 
         private void FrmClients_Load(object sender, EventArgs e)
         {
-
+            LoadClients();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -142,18 +144,12 @@ namespace Gestion_Compte_Clients
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                Clients ClientInstance = new Clients();
-                List<Clients> clients = ClientInstance.GetClients();
-                dbClients.DataSource = null; // Réinitialiser la source de données
-                dbClients.DataSource = clients; // Définir la nouvelle source de données
-                dbClients.Refresh(); // Forcer le rafraîchissement de la DataGrid
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur de Chargement Article : " + ex.Message);
-            }
+            dbClients.AutoGenerateColumns = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
