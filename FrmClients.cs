@@ -61,7 +61,7 @@ namespace Gestion_Compte_Clients
 
         private void FrmClients_Load(object sender, EventArgs e)
         {
-            LoadClients();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
