@@ -110,7 +110,7 @@ namespace Gestion_Compte_Clients
                 string typeTransaction = rbDepot.Checked ? "Dépot" : "Retrait";
 
                 // Chaîne de connexion à la base de données
-                string connectionString = "Votre_chaine_de_connexion";
+                string connectionString = "Data Source=ANELKA-MD; Initial Catalog=Gestion_Compte_Clients; User ID=Anelka; Password=26355217; Encrypt=false";
 
                 // Requête SQL pour insérer une transaction
                 string queryTransaction = "INSERT INTO Transactions (CompteID,TypeTransaction, Montant, DateTransaction, ) " +
