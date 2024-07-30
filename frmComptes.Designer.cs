@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtSolde = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             label2 = new Label();
             SuspendLayout();
@@ -44,13 +44,13 @@
             label1.TabIndex = 0;
             label1.Text = "Solde :";
             // 
-            // textBox1
+            // txtSolde
             // 
-            textBox1.Location = new Point(104, 92);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(402, 31);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txtSolde.Location = new Point(104, 92);
+            txtSolde.Name = "txtSolde";
+            txtSolde.Size = new Size(402, 31);
+            txtSolde.TabIndex = 1;
+            txtSolde.TextChanged += textBox1_TextChanged;
             // 
             // dateTimePicker1
             // 
@@ -76,7 +76,7 @@
             ClientSize = new Size(800, 486);
             Controls.Add(label2);
             Controls.Add(dateTimePicker1);
-            Controls.Add(textBox1);
+            Controls.Add(txtSolde);
             Controls.Add(label1);
             Name = "frmComptes";
             Text = "frmComptes";
@@ -87,7 +87,7 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtSolde;
         private DateTimePicker dateTimePicker1;
         private Label label2;
     }
