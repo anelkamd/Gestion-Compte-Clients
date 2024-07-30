@@ -163,6 +163,16 @@ namespace Gestion_Compte_Clients.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap img_freelance {
+            get {
+                object obj = ResourceManager.GetObject("img-freelance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Light {
             get {
                 object obj = ResourceManager.GetObject("Light", resourceCulture);

@@ -39,18 +39,17 @@
             label4 = new Label();
             txtTelephone = new TextBox();
             dbClients = new DataGridView();
+            clientIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nomDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            prenomDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            adresseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            telephoneDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             clientsBindingSource = new BindingSource(components);
             pictureBox1 = new PictureBox();
             label5 = new Label();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            button4 = new Button();
-            clientIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nomDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            prenomDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            adresseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            telephoneDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dbClients).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clientsBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -138,6 +137,46 @@
             dbClients.TabIndex = 8;
             dbClients.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            clientIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            clientIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            nomDataGridViewTextBoxColumn.DataPropertyName = "Nom";
+            nomDataGridViewTextBoxColumn.HeaderText = "Nom";
+            nomDataGridViewTextBoxColumn.MinimumWidth = 8;
+            nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            nomDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // prenomDataGridViewTextBoxColumn
+            // 
+            prenomDataGridViewTextBoxColumn.DataPropertyName = "Prenom";
+            prenomDataGridViewTextBoxColumn.HeaderText = "Prenom";
+            prenomDataGridViewTextBoxColumn.MinimumWidth = 8;
+            prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
+            prenomDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // adresseDataGridViewTextBoxColumn
+            // 
+            adresseDataGridViewTextBoxColumn.DataPropertyName = "Adresse";
+            adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            adresseDataGridViewTextBoxColumn.MinimumWidth = 8;
+            adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
+            adresseDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // telephoneDataGridViewTextBoxColumn
+            // 
+            telephoneDataGridViewTextBoxColumn.DataPropertyName = "Telephone";
+            telephoneDataGridViewTextBoxColumn.HeaderText = "Telephone";
+            telephoneDataGridViewTextBoxColumn.MinimumWidth = 8;
+            telephoneDataGridViewTextBoxColumn.Name = "telephoneDataGridViewTextBoxColumn";
+            telephoneDataGridViewTextBoxColumn.Width = 150;
+            // 
             // clientsBindingSource
             // 
             clientsBindingSource.DataSource = typeof(Mes_Classes.Clients);
@@ -202,65 +241,11 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
-            // button4
-            // 
-            button4.BackColor = Color.LightGray;
-            button4.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.Black;
-            button4.Location = new Point(432, 503);
-            button4.Name = "button4";
-            button4.Size = new Size(129, 34);
-            button4.TabIndex = 14;
-            button4.Text = "Afficher";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
-            // 
-            // clientIDDataGridViewTextBoxColumn
-            // 
-            clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
-            clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
-            clientIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            clientIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            nomDataGridViewTextBoxColumn.DataPropertyName = "Nom";
-            nomDataGridViewTextBoxColumn.HeaderText = "Nom";
-            nomDataGridViewTextBoxColumn.MinimumWidth = 8;
-            nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            nomDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // prenomDataGridViewTextBoxColumn
-            // 
-            prenomDataGridViewTextBoxColumn.DataPropertyName = "Prenom";
-            prenomDataGridViewTextBoxColumn.HeaderText = "Prenom";
-            prenomDataGridViewTextBoxColumn.MinimumWidth = 8;
-            prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
-            prenomDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // adresseDataGridViewTextBoxColumn
-            // 
-            adresseDataGridViewTextBoxColumn.DataPropertyName = "Adresse";
-            adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
-            adresseDataGridViewTextBoxColumn.MinimumWidth = 8;
-            adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
-            adresseDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // telephoneDataGridViewTextBoxColumn
-            // 
-            telephoneDataGridViewTextBoxColumn.DataPropertyName = "Telephone";
-            telephoneDataGridViewTextBoxColumn.HeaderText = "Telephone";
-            telephoneDataGridViewTextBoxColumn.MinimumWidth = 8;
-            telephoneDataGridViewTextBoxColumn.Name = "telephoneDataGridViewTextBoxColumn";
-            telephoneDataGridViewTextBoxColumn.Width = 150;
-            // 
             // FrmClients
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(866, 549);
-            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -303,7 +288,6 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private Button button4;
         private BindingSource clientsBindingSource;
         private DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
