@@ -51,7 +51,7 @@ namespace Gestion_Compte_Clients
 
         private int EnregistrerTransaction(Transactions transaction)
         {
-            string connectionString = "votre_chaine_de_connexion";
+            string connectionString = "Data Source=ANELKA-MD; Initial Catalog=Gestion_Compte_Clients; User ID=Anelka; Password=26355217; Encrypt=false";
 
             try
             {
