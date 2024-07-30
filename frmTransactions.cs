@@ -23,10 +23,17 @@ namespace Gestion_Compte_Clients
 
         private void bindingClass(Transactions transactions, string typeTransaction)
         {
-            transactions.Montant = Convert.ToDecimal(txtMontant.Text);
-            transactions.CompteID = Convert.ToInt32(txtNumClient.Text);
-            transactions.DateTransaction = dtTransaction.Value;
-            transactions.TypeTransaction = typeTransaction;
+            try 
+            {
+                transactions.Montant = Convert.ToDecimal(txtMontant.Text);
+                transactions.CompteID = Convert.ToInt32(txtNumClient.Text);
+                transactions.DateTransaction = dtTransaction.Value;
+                transactions.TypeTransaction = typeTransaction;
+            }
+            catch
+            {
+                MessageBox.Show("Veillez remplire le formulaire svp");
+            }
         }
 
         private void rbDepot_CheckedChanged(object sender, EventArgs e)
@@ -97,7 +104,20 @@ namespace Gestion_Compte_Clients
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Voulais vous confirmer cette transaction ?");
+            static void Main()
+            {
+                DialogResult result = MessageBox.Show("Voulez-vous continuer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    Console.WriteLine("Vous avez cliqué sur Oui.");
+                }
+                else if (result == DialogResult.No)
+                {
+                    // Code à exécuter si l'utilisateur clique sur Non
+                    Console.WriteLine("Vous avez cliqué sur Non.");
+                }
+            }
             try
             {
                 Transactions transactions = new Transactions();
