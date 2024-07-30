@@ -24,6 +24,7 @@ namespace Gestion_Compte_Clients
             try
             {
                 comptes.Solde = Convert.ToDecimal(txtSolde.Text);
+                comptes.ClientID = Convert.ToInt32(txtClientID.Text);
                 comptes.DateCreation = dtCreation.Value;
             }
             catch
@@ -42,9 +43,10 @@ namespace Gestion_Compte_Clients
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Compte (Solde, DateCreation) VALUES (@Solde, @DateCreation)";
+                    string query = "INSERT INTO Compte (ClientID,Solde, DateCreation) VALUES ( @ClientID, @Solde, @DateCreation)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
+                        command.Parameters.AddWithValue("@ClientID", comptes.Solde);
                         command.Parameters.AddWithValue("@Solde", comptes.Solde);
                         command.Parameters.AddWithValue("@DateCreation", comptes.DateCreation);
 
