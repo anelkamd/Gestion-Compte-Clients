@@ -17,11 +17,12 @@ namespace Gestion_Compte_Clients.Mes_Classes
 
         public Transactions() { }
 
-        public Transactions( string typeTransaction, decimal montant)
+        public Transactions(int compteID, string typeTransaction, decimal montant, DateTime dateTrasaction)
         {
-            //CompteID = compteID;
+            CompteID = compteID;
             TypeTransaction = typeTransaction;
             Montant = montant;
+            DateTransaction = dateTrasaction;
         }
 
         private DataAccess data = new DataAccess();
@@ -29,7 +30,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
         public int EnregistrerTransaction(Transactions transactions)
         {
             int resultat = 0;
-            string strQuery = "INSERT INTO Transactions (CompteID, Montant, TypeTransaction) VALUES (@Montant, @TypeTransaction)";
+            string strQuery = "INSERT INTO Transactions (CompteID, Montant, TypeTransaction, DateTransaction) VALUES (@CompteID , @Montant, @TypeTransaction,@DateTransaction)";
 
             if (data.OpenConnection())
             {
@@ -38,17 +39,18 @@ namespace Gestion_Compte_Clients.Mes_Classes
                     using (SqlCommand cmd = new SqlCommand(strQuery, data.conn))
                     {
 
-                        //cmd.Parameters.AddWithValue("@CompteID", transactions.CompteID);
+                        cmd.Parameters.AddWithValue("@CompteID", transactions.CompteID);
                         cmd.Parameters.AddWithValue("@Montant", transactions.Montant);
                         cmd.Parameters.AddWithValue("@TypeTransaction", transactions.TypeTransaction);
+                        cmd.Parameters.AddWithValue("@DateTransaction", transactions.DateTransaction);
 
                         resultat = cmd.ExecuteNonQuery();
                     }
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show($"Erreur lors de la Transaction : {ex.Message}");
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show($"Erreur lors de la Transaction : {ex.Message}");
+                    //Console.WriteLine(ex.ToString());
                 }
                 finally
                 {
