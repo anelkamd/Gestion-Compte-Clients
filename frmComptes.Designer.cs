@@ -32,6 +32,8 @@
             txtSolde = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             label2 = new Label();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -69,17 +71,28 @@
             label2.TabIndex = 3;
             label2.Text = "Date de Creation :";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(26, 199);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(750, 225);
+            dataGridView1.TabIndex = 4;
+            // 
             // frmComptes
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 486);
+            Controls.Add(dataGridView1);
             Controls.Add(label2);
             Controls.Add(dateTimePicker1);
             Controls.Add(txtSolde);
             Controls.Add(label1);
             Name = "frmComptes";
             Text = "frmComptes";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -90,5 +103,6 @@
         private TextBox txtSolde;
         private DateTimePicker dateTimePicker1;
         private Label label2;
+        private DataGridView dataGridView1;
     }
 }
