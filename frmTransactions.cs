@@ -23,7 +23,7 @@ namespace Gestion_Compte_Clients
 
         private void bindingClass(Transactions transactions, string typeTransaction)
         {
-            try 
+            try
             {
                 transactions.Montant = Convert.ToDecimal(txtMontant.Text);
                 transactions.CompteID = Convert.ToInt32(txtNumClient.Text);
@@ -152,6 +152,11 @@ namespace Gestion_Compte_Clients
             {
                 MessageBox.Show("Une erreur est survenue : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

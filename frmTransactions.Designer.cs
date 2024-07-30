@@ -43,8 +43,10 @@
             label4 = new Label();
             pictureBox1 = new PictureBox();
             label5 = new Label();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -186,11 +188,23 @@
             label5.TabIndex = 21;
             label5.Text = "Enregistrement Des Transactions";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources._61167;
+            pictureBox2.Location = new Point(28, 16);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(43, 34);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 22;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
             // frmTransactions
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(799, 572);
+            Controls.Add(pictureBox2);
             Controls.Add(label5);
             Controls.Add(pictureBox1);
             Controls.Add(txtNumClient);
@@ -212,6 +226,7 @@
             Load += frmTransactions_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -234,5 +249,6 @@
         private Label label4;
         private PictureBox pictureBox1;
         private Label label5;
+        private PictureBox pictureBox2;
     }
 }
