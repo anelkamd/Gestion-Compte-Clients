@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmComptes));
             label1 = new Label();
             txtSolde = new TextBox();
             dateTimePicker1 = new DateTimePicker();
@@ -37,6 +38,7 @@
             button2 = new Button();
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -123,19 +125,30 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.img_freelance;
-            pictureBox1.Location = new Point(533, 0);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(506, -6);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(243, 208);
+            pictureBox1.Size = new Size(296, 214);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Poppins", 10F);
+            label5.Location = new Point(197, 19);
+            label5.Name = "label5";
+            label5.Size = new Size(365, 36);
+            label5.TabIndex = 22;
+            label5.Text = "Enregistrement Des Compte Clients";
             // 
             // frmComptes
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 486);
+            Controls.Add(label5);
             Controls.Add(pictureBox1);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -164,5 +177,6 @@
         private Button button2;
         private Button button1;
         private PictureBox pictureBox1;
+        private Label label5;
     }
 }

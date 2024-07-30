@@ -41,14 +41,17 @@
             rbRetrait = new RadioButton();
             txtNumClient = new TextBox();
             label4 = new Label();
+            pictureBox1 = new PictureBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(28, 113);
+            label1.Location = new Point(28, 129);
             label1.Name = "label1";
             label1.Size = new Size(109, 31);
             label1.TabIndex = 0;
@@ -56,7 +59,7 @@
             // 
             // txtMontant
             // 
-            txtMontant.Location = new Point(143, 113);
+            txtMontant.Location = new Point(143, 129);
             txtMontant.Name = "txtMontant";
             txtMontant.Size = new Size(376, 31);
             txtMontant.TabIndex = 1;
@@ -65,7 +68,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(28, 173);
+            label2.Location = new Point(28, 189);
             label2.Name = "label2";
             label2.Size = new Size(226, 31);
             label2.TabIndex = 4;
@@ -73,7 +76,7 @@
             // 
             // dtTransaction
             // 
-            dtTransaction.Location = new Point(177, 227);
+            dtTransaction.Location = new Point(177, 243);
             dtTransaction.Name = "dtTransaction";
             dtTransaction.Size = new Size(342, 31);
             dtTransaction.TabIndex = 5;
@@ -82,7 +85,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(28, 232);
+            label3.Location = new Point(28, 248);
             label3.Name = "label3";
             label3.Size = new Size(143, 31);
             label3.TabIndex = 6;
@@ -91,10 +94,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(28, 280);
+            dataGridView1.Location = new Point(28, 297);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(736, 225);
+            dataGridView1.Size = new Size(746, 208);
             dataGridView1.TabIndex = 7;
             // 
             // button2
@@ -126,7 +129,7 @@
             // 
             rbDepot.AutoSize = true;
             rbDepot.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbDepot.Location = new Point(268, 173);
+            rbDepot.Location = new Point(268, 189);
             rbDepot.Name = "rbDepot";
             rbDepot.Size = new Size(90, 32);
             rbDepot.TabIndex = 16;
@@ -138,7 +141,7 @@
             // 
             rbRetrait.AutoSize = true;
             rbRetrait.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbRetrait.Location = new Point(375, 173);
+            rbRetrait.Location = new Point(375, 189);
             rbRetrait.Name = "rbRetrait";
             rbRetrait.Size = new Size(97, 32);
             rbRetrait.TabIndex = 17;
@@ -148,7 +151,7 @@
             // 
             // txtNumClient
             // 
-            txtNumClient.Location = new Point(192, 62);
+            txtNumClient.Location = new Point(192, 78);
             txtNumClient.Name = "txtNumClient";
             txtNumClient.Size = new Size(327, 31);
             txtNumClient.TabIndex = 19;
@@ -157,17 +160,39 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(28, 62);
+            label4.Location = new Point(28, 78);
             label4.Name = "label4";
             label4.Size = new Size(158, 31);
             label4.TabIndex = 18;
             label4.Text = "Num Compte :";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(524, 16);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(274, 255);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 20;
+            pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Poppins", 10F);
+            label5.Location = new Point(214, 19);
+            label5.Name = "label5";
+            label5.Size = new Size(340, 36);
+            label5.TabIndex = 21;
+            label5.Text = "Enregistrement Des Transactions";
             // 
             // frmTransactions
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(799, 572);
+            Controls.Add(label5);
+            Controls.Add(pictureBox1);
             Controls.Add(txtNumClient);
             Controls.Add(label4);
             Controls.Add(rbRetrait);
@@ -186,6 +211,7 @@
             Text = "Les Transactions";
             Load += frmTransactions_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,5 +232,7 @@
         private RadioButton rbRetrait;
         private TextBox txtNumClient;
         private Label label4;
+        private PictureBox pictureBox1;
+        private Label label5;
     }
 }

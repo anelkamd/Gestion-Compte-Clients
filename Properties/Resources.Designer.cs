@@ -63,6 +63,16 @@ namespace Gestion_Compte_Clients.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3d_render_money_transfer_mobile_banking_online {
+            get {
+                object obj = ResourceManager.GetObject("3d-render-money-transfer-mobile-banking-online", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avatar_default_icon {
             get {
                 object obj = ResourceManager.GetObject("avatar-default-icon", resourceCulture);
