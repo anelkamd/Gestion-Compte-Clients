@@ -17,9 +17,9 @@ namespace Gestion_Compte_Clients.Mes_Classes
 
         public Transactions() { }
 
-        public Transactions(int compteID, string typeTransaction, decimal montant)
+        public Transactions( string typeTransaction, decimal montant)
         {
-            CompteID = compteID;
+            //CompteID = compteID;
             TypeTransaction = typeTransaction;
             Montant = montant;
         }
@@ -29,7 +29,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
         public int EnregistrerTransaction(Transactions transactions)
         {
             int resultat = 0;
-            string strQuery = "INSERT INTO Transactions ( CompteID, Montant, TypeTransaction) VALUES ( @CompteID, @Montant, @TypeTransaction)";
+            string strQuery = "INSERT INTO Transactions ( Montant, TypeTransaction) VALUES (@Montant, @TypeTransaction)";
 
             if (data.OpenConnection())
             {
@@ -38,7 +38,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
                     using (SqlCommand cmd = new SqlCommand(strQuery, data.conn))
                     {
 
-                        cmd.Parameters.AddWithValue("@CompteID", transactions.CompteID);
+                        //cmd.Parameters.AddWithValue("@CompteID", transactions.CompteID);
                         cmd.Parameters.AddWithValue("@Montant", transactions.Montant);
                         cmd.Parameters.AddWithValue("@TypeTransaction", transactions.TypeTransaction);
 
@@ -47,7 +47,8 @@ namespace Gestion_Compte_Clients.Mes_Classes
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Erreur lors de la Transaction : {ex.Message}");
+                    //MessageBox.Show($"Erreur lors de la Transaction : {ex.Message}");
+                    Console.WriteLine(ex.ToString());
                 }
                 finally
                 {

@@ -26,7 +26,7 @@ namespace Gestion_Compte_Clients
             try 
             {
                 transactions.Montant = Convert.ToDecimal(txtMontant.Text);
-                transactions.CompteID = Convert.ToInt32(txtNumClient.Text);
+                //transactions.CompteID = Convert.ToInt32(txtNumClient.Text);
                 transactions.DateTransaction = dtTransaction.Value;
                 transactions.TypeTransaction = typeTransaction;
             }
@@ -65,7 +65,7 @@ namespace Gestion_Compte_Clients
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Transactions (TypeTransaction, Montant, CompteID, DateTransaction) VALUES (@TypeTransaction, @Montant, @CompteID, @DateTransaction)";
+                    string query = "INSERT INTO Transactions (TypeTransaction, Montant, DateTransaction) VALUES (@TypeTransaction, @Montant, @DateTransaction)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@TypeTransaction", transaction.TypeTransaction);
@@ -101,20 +101,6 @@ namespace Gestion_Compte_Clients
 
         private void button1_Click(object sender, EventArgs e)
         {
-            static void Main()
-            {
-                DialogResult result = MessageBox.Show("Voulez-vous continuer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    Console.WriteLine("Vous avez cliqué sur Oui.");
-                }
-                else if (result == DialogResult.No)
-                {
-                    // Code à exécuter si l'utilisateur clique sur Non
-                    Console.WriteLine("Vous avez cliqué sur Non.");
-                }
-            }
             try
             {
                 // Récupérer les valeurs des contrôles
