@@ -61,7 +61,7 @@ namespace Gestion_Compte_Clients
 
         private void FrmClients_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -144,12 +144,17 @@ namespace Gestion_Compte_Clients
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dbClients.AutoGenerateColumns = true;
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void clientsBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

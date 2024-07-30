@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClients));
             txtNom = new TextBox();
             label1 = new Label();
@@ -38,13 +39,20 @@
             label4 = new Label();
             txtTelephone = new TextBox();
             dbClients = new DataGridView();
+            clientsBindingSource = new BindingSource(components);
             pictureBox1 = new PictureBox();
             label5 = new Label();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            clientIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nomDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            prenomDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            adresseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            telephoneDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dbClients).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)clientsBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -52,7 +60,7 @@
             // 
             txtNom.Location = new Point(137, 80);
             txtNom.Name = "txtNom";
-            txtNom.Size = new Size(296, 31);
+            txtNom.Size = new Size(339, 31);
             txtNom.TabIndex = 0;
             // 
             // label1
@@ -79,7 +87,7 @@
             // 
             txtPrenom.Location = new Point(137, 136);
             txtPrenom.Name = "txtPrenom";
-            txtPrenom.Size = new Size(296, 31);
+            txtPrenom.Size = new Size(339, 31);
             txtPrenom.TabIndex = 2;
             // 
             // label3
@@ -97,7 +105,7 @@
             // 
             txtAdresse.Location = new Point(137, 195);
             txtAdresse.Name = "txtAdresse";
-            txtAdresse.Size = new Size(296, 31);
+            txtAdresse.Size = new Size(339, 31);
             txtAdresse.TabIndex = 4;
             // 
             // label4
@@ -114,25 +122,33 @@
             // 
             txtTelephone.Location = new Point(162, 247);
             txtTelephone.Name = "txtTelephone";
-            txtTelephone.Size = new Size(271, 31);
+            txtTelephone.Size = new Size(314, 31);
             txtTelephone.TabIndex = 6;
             // 
             // dbClients
             // 
+            dbClients.AutoGenerateColumns = false;
             dbClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dbClients.Columns.AddRange(new DataGridViewColumn[] { clientIDDataGridViewTextBoxColumn, nomDataGridViewTextBoxColumn, prenomDataGridViewTextBoxColumn, adresseDataGridViewTextBoxColumn, telephoneDataGridViewTextBoxColumn });
+            dbClients.DataSource = clientsBindingSource;
             dbClients.Location = new Point(27, 307);
             dbClients.Name = "dbClients";
             dbClients.RowHeadersWidth = 62;
-            dbClients.Size = new Size(706, 180);
+            dbClients.Size = new Size(814, 180);
             dbClients.TabIndex = 8;
             dbClients.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // clientsBindingSource
+            // 
+            clientsBindingSource.DataSource = typeof(Mes_Classes.Clients);
+            clientsBindingSource.CurrentChanged += clientsBindingSource_CurrentChanged;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.avatar_default_icon;
-            pictureBox1.Location = new Point(467, 80);
+            pictureBox1.Location = new Point(529, 80);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(266, 198);
+            pictureBox1.Size = new Size(305, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
@@ -199,11 +215,51 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            clientIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            clientIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            nomDataGridViewTextBoxColumn.DataPropertyName = "Nom";
+            nomDataGridViewTextBoxColumn.HeaderText = "Nom";
+            nomDataGridViewTextBoxColumn.MinimumWidth = 8;
+            nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            nomDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // prenomDataGridViewTextBoxColumn
+            // 
+            prenomDataGridViewTextBoxColumn.DataPropertyName = "Prenom";
+            prenomDataGridViewTextBoxColumn.HeaderText = "Prenom";
+            prenomDataGridViewTextBoxColumn.MinimumWidth = 8;
+            prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
+            prenomDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // adresseDataGridViewTextBoxColumn
+            // 
+            adresseDataGridViewTextBoxColumn.DataPropertyName = "Adresse";
+            adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            adresseDataGridViewTextBoxColumn.MinimumWidth = 8;
+            adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
+            adresseDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // telephoneDataGridViewTextBoxColumn
+            // 
+            telephoneDataGridViewTextBoxColumn.DataPropertyName = "Telephone";
+            telephoneDataGridViewTextBoxColumn.HeaderText = "Telephone";
+            telephoneDataGridViewTextBoxColumn.MinimumWidth = 8;
+            telephoneDataGridViewTextBoxColumn.Name = "telephoneDataGridViewTextBoxColumn";
+            telephoneDataGridViewTextBoxColumn.Width = 150;
+            // 
             // FrmClients
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(763, 549);
+            ClientSize = new Size(866, 549);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -225,6 +281,7 @@
             Text = "Enregistrement Clients";
             Load += FrmClients_Load;
             ((System.ComponentModel.ISupportInitialize)dbClients).EndInit();
+            ((System.ComponentModel.ISupportInitialize)clientsBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -247,5 +304,11 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private BindingSource clientsBindingSource;
+        private DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn prenomDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn adresseDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn telephoneDataGridViewTextBoxColumn;
     }
 }
