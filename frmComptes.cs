@@ -96,5 +96,10 @@ namespace Gestion_Compte_Clients
                 MessageBox.Show("Un problème s'est produit, veuillez réessayer !!!");
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

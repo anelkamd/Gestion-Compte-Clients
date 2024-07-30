@@ -73,6 +73,16 @@ namespace Gestion_Compte_Clients.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _61167 {
+            get {
+                object obj = ResourceManager.GetObject("61167", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avatar_default_icon {
             get {
                 object obj = ResourceManager.GetObject("avatar-default-icon", resourceCulture);
