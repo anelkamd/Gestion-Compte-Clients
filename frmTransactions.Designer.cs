@@ -99,15 +99,16 @@
             dataGridView1.Location = new Point(28, 297);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(746, 208);
+            dataGridView1.Size = new Size(746, 188);
             dataGridView1.TabIndex = 7;
             // 
             // button2
             // 
             button2.BackColor = Color.Black;
+            button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(161, 526);
+            button2.Location = new Point(161, 499);
             button2.Name = "button2";
             button2.Size = new Size(129, 34);
             button2.TabIndex = 15;
@@ -117,9 +118,10 @@
             // button1
             // 
             button1.BackColor = Color.DeepSkyBlue;
+            button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(26, 526);
+            button1.Location = new Point(26, 499);
             button1.Name = "button1";
             button1.Size = new Size(129, 34);
             button1.TabIndex = 14;
@@ -203,7 +205,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(799, 572);
+            ClientSize = new Size(799, 541);
             Controls.Add(pictureBox2);
             Controls.Add(label5);
             Controls.Add(pictureBox1);
