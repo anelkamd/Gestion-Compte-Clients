@@ -41,7 +41,6 @@
             rbRetrait = new RadioButton();
             txtNumClient = new TextBox();
             label4 = new Label();
-            txtTransaction = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -127,7 +126,7 @@
             // 
             rbDepot.AutoSize = true;
             rbDepot.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbDepot.Location = new Point(560, 61);
+            rbDepot.Location = new Point(268, 173);
             rbDepot.Name = "rbDepot";
             rbDepot.Size = new Size(90, 32);
             rbDepot.TabIndex = 16;
@@ -139,7 +138,7 @@
             // 
             rbRetrait.AutoSize = true;
             rbRetrait.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbRetrait.Location = new Point(667, 61);
+            rbRetrait.Location = new Point(375, 173);
             rbRetrait.Name = "rbRetrait";
             rbRetrait.Size = new Size(97, 32);
             rbRetrait.TabIndex = 17;
@@ -164,21 +163,11 @@
             label4.TabIndex = 18;
             label4.Text = "Num Compte :";
             // 
-            // txtTransaction
-            // 
-            txtTransaction.Font = new Font("Poppins Thin", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTransaction.Location = new Point(260, 170);
-            txtTransaction.Name = "txtTransaction";
-            txtTransaction.Size = new Size(259, 31);
-            txtTransaction.TabIndex = 20;
-            txtTransaction.Text = "Depot ou Retrait";
-            // 
             // frmTransactions
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(799, 572);
-            Controls.Add(txtTransaction);
             Controls.Add(txtNumClient);
             Controls.Add(label4);
             Controls.Add(rbRetrait);
@@ -217,6 +206,5 @@
         private RadioButton rbRetrait;
         private TextBox txtNumClient;
         private Label label4;
-        private TextBox txtTransaction;
     }
 }
