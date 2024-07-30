@@ -209,8 +209,10 @@
             Controls.Add(txtSolde);
             Controls.Add(label1);
             Font = new Font("Poppins", 8F);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmComptes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Les Comptes";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
