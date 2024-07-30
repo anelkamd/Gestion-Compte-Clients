@@ -29,7 +29,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
         public int EnregistrerTransaction(Transactions transactions)
         {
             int resultat = 0;
-            string strQuery = "INSERT INTO Transactions ( Montant, TypeTransaction) VALUES (@Montant, @TypeTransaction)";
+            string strQuery = "INSERT INTO Transactions (CompteID, Montant, TypeTransaction) VALUES (@Montant, @TypeTransaction)";
 
             if (data.OpenConnection())
             {

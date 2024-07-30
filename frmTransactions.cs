@@ -26,7 +26,7 @@ namespace Gestion_Compte_Clients
             try 
             {
                 transactions.Montant = Convert.ToDecimal(txtMontant.Text);
-                //transactions.CompteID = Convert.ToInt32(txtNumClient.Text);
+                transactions.CompteID = Convert.ToInt32(txtNumClient.Text);
                 transactions.DateTransaction = dtTransaction.Value;
                 transactions.TypeTransaction = typeTransaction;
             }
@@ -65,7 +65,7 @@ namespace Gestion_Compte_Clients
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Transactions (TypeTransaction, Montant, DateTransaction) VALUES (@TypeTransaction, @Montant, @DateTransaction)";
+                    string query = "INSERT INTO Transactions (CompteID, TypeTransaction, Montant, DateTransaction) VALUES (@CompteID,@TypeTransaction, @Montant, @DateTransaction)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@TypeTransaction", transaction.TypeTransaction);
