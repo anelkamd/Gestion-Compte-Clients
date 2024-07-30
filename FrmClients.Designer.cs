@@ -207,6 +207,7 @@
             // button1
             // 
             button1.BackColor = Color.DeepSkyBlue;
+            button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
             button1.Location = new Point(27, 503);
@@ -220,6 +221,7 @@
             // button2
             // 
             button2.BackColor = Color.Black;
+            button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
             button2.Location = new Point(162, 503);
@@ -233,6 +235,7 @@
             // button3
             // 
             button3.BackColor = Color.Red;
+            button3.Cursor = Cursors.Hand;
             button3.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.White;
             button3.Location = new Point(297, 503);
