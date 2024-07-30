@@ -62,10 +62,16 @@ namespace Gestion_Compte_Clients
 
             try
             {
+                // Vérifier que le type de transaction est valide
+                if (transaction.TypeTransaction != "Dépot" && transaction.TypeTransaction != "Retrait")
+                {
+                    throw new ArgumentException("TypeTransaction doit être 'Dépot' ou 'Retrait'");
+                }
+
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Transactions (CompteID, TypeTransaction, Montant, DateTransaction) VALUES (@CompteID,@TypeTransaction, @Montant, @DateTransaction)";
+                    string query = "INSERT INTO Transactions (CompteID, TypeTransaction, Montant, DateTransaction) VALUES (@CompteID, @TypeTransaction, @Montant, @DateTransaction)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@CompteID", transaction.CompteID);
@@ -79,15 +85,21 @@ namespace Gestion_Compte_Clients
             }
             catch (SqlException sqlEx)
             {
-                MessageBox.Show("Erreur SQL: ");
+                MessageBox.Show("Erreur SQL: " + sqlEx.Message, "Erreur SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+            catch (ArgumentException argEx)
+            {
+                MessageBox.Show("Erreur de validation: " + argEx.Message, "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return -1;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur: " );
+                MessageBox.Show("Erreur: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
         }
+
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
@@ -113,8 +125,8 @@ namespace Gestion_Compte_Clients
                 string connectionString = "Data Source=ANELKA-MD; Initial Catalog=Gestion_Compte_Clients; User ID=Anelka; Password=26355217; Encrypt=false";
 
                 // Requête SQL pour insérer une transaction
-                string queryTransaction = "INSERT INTO Transactions (CompteID,TypeTransaction, Montant, DateTransaction, ) " +
-                                          "VALUES (@CompteID,@TypeTransaction, @Montant, @DateTransaction, )";
+                string queryTransaction = "INSERT INTO Transactions (CompteID,TypeTransaction, Montant, DateTransaction) " +
+                                          "VALUES (@CompteID,@TypeTransaction, @Montant, @DateTransaction)";
 
                 // Requête SQL pour mettre à jour le solde du compte
                 string queryUpdateSolde;
