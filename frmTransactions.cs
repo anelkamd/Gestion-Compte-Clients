@@ -119,64 +119,33 @@ namespace Gestion_Compte_Clients
                 decimal montant = Convert.ToDecimal(txtMontant.Text);
                 int compteID = Convert.ToInt32(txtNumClient.Text);
                 DateTime dateTransaction = dtTransaction.Value;
-                string typeTransaction = rbDepot.Checked ? "Dépot" : "Retrait";
+                string typeTransaction = rbDepot.Checked ? "Dépot" : (rbRetrait.Checked ? "Retrait" : null);
 
-                // Chaîne de connexion à la base de données
-                string connectionString = "Data Source=ANELKA-MD; Initial Catalog=Gestion_Compte_Clients; User ID=Anelka; Password=26355217; Encrypt=false";
-
-                // Requête SQL pour insérer une transaction
-                string queryTransaction = "INSERT INTO Transactions (CompteID,TypeTransaction, Montant, DateTransaction) " +
-                                          "VALUES (@CompteID,@TypeTransaction, @Montant, @DateTransaction)";
-
-                // Requête SQL pour mettre à jour le solde du compte
-                string queryUpdateSolde;
-                if (typeTransaction == "Dépot")
+                if (typeTransaction == null)
                 {
-                    queryUpdateSolde = "UPDATE Comptes SET Solde = Solde + @Montant WHERE CompteID = @CompteID";
+                    MessageBox.Show("Veuillez sélectionner le type de transaction.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Créer une instance de Transactions
+                Transactions transaction = new Transactions
+                {
+                    CompteID = compteID,
+                    TypeTransaction = typeTransaction,
+                    Montant = montant,
+                    DateTransaction = dateTransaction
+                };
+
+                // Enregistrer la transaction
+                int resultat = EnregistrerTransaction(transaction);
+
+                if (resultat > 0)
+                {
+                    MessageBox.Show("Transaction enregistrée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    queryUpdateSolde = "UPDATE Comptes SET Solde = Solde - @Montant WHERE CompteID = @CompteID";
-                }
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-
-                    // Commencer une transaction SQL
-                    SqlTransaction sqlTransaction = connection.BeginTransaction();
-
-                    try
-                    {
-                        // Insérer la transaction
-                        using (SqlCommand commandTransaction = new SqlCommand(queryTransaction, connection, sqlTransaction))
-                        {
-                            commandTransaction.Parameters.AddWithValue("@CompteID", compteID);
-                            commandTransaction.Parameters.AddWithValue("@TypeTransaction", typeTransaction);
-                            commandTransaction.Parameters.AddWithValue("@Montant", montant);
-                            commandTransaction.Parameters.AddWithValue("@DateTransaction", dateTransaction);
-                            commandTransaction.ExecuteNonQuery();
-                        }
-
-                        // Mettre à jour le solde du compte
-                        using (SqlCommand commandUpdateSolde = new SqlCommand(queryUpdateSolde, connection, sqlTransaction))
-                        {
-                            commandUpdateSolde.Parameters.AddWithValue("@CompteID", compteID);
-                            commandUpdateSolde.Parameters.AddWithValue("@Montant", montant);
-                            commandUpdateSolde.ExecuteNonQuery();
-                        }
-
-                        // Valider la transaction SQL
-                        sqlTransaction.Commit();
-
-                        MessageBox.Show("Transaction enregistrée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        // Annuler la transaction SQL en cas d'erreur
-                        sqlTransaction.Rollback();
-                        MessageBox.Show("Une erreur est survenue : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("L'enregistrement de la transaction a échoué.", "Échec", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
