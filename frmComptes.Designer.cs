@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmComptes));
             label1 = new Label();
             txtSolde = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            dtCreation = new DateTimePicker();
             label2 = new Label();
             dataGridView1 = new DataGridView();
             button3 = new Button();
@@ -61,12 +61,12 @@
             txtSolde.TabIndex = 1;
             txtSolde.TextChanged += textBox1_TextChanged;
             // 
-            // dateTimePicker1
+            // dtCreation
             // 
-            dateTimePicker1.Location = new Point(206, 151);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(294, 31);
-            dateTimePicker1.TabIndex = 2;
+            dtCreation.Location = new Point(206, 151);
+            dtCreation.Name = "dtCreation";
+            dtCreation.Size = new Size(294, 31);
+            dtCreation.TabIndex = 2;
             // 
             // label2
             // 
@@ -122,6 +122,7 @@
             button1.TabIndex = 14;
             button1.Text = "Enregistrer";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -155,7 +156,7 @@
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtCreation);
             Controls.Add(txtSolde);
             Controls.Add(label1);
             Name = "frmComptes";
@@ -170,7 +171,7 @@
 
         private Label label1;
         private TextBox txtSolde;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtCreation;
         private Label label2;
         private DataGridView dataGridView1;
         private Button button3;

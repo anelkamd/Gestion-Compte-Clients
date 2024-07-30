@@ -41,5 +41,11 @@ namespace Gestion_Compte_Clients
             frmTransactions frm = new frmTransactions();
             frm.Show();
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            frmComptes frmComptes = new frmComptes();
+            frmComptes.Show();
+        }
     }
 }

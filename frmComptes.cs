@@ -19,8 +19,21 @@ namespace Gestion_Compte_Clients
             InitializeComponent();
         }
 
+        private void bindingClass(Comptes comptes)
+        {
+            try
+            {
+                comptes.Solde = Convert.ToDecimal(txtSolde.Text);
+                comptes.DateCreation = dtCreation.Value;
+            }
+            catch
+            {
+                MessageBox.Show("Veillez remplire le formulaire svp");
+            }
+        }
 
-        private int EnregistrerTransaction(Comptes comptes)
+
+        private int EnregistrerComptes(Comptes comptes)
         {
             string connectionString = "Data Source=ANELKA-MD; Initial Catalog=Gestion_Compte_Clients; User ID=Anelka; Password=26355217; Encrypt=false";
 
@@ -54,6 +67,32 @@ namespace Gestion_Compte_Clients
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Comptes comptes = new Comptes();
+
+                bindingClass(comptes);
+
+                Comptes CompteInstance = new Comptes();
+
+                int resultat = CompteInstance.EnregistrerComptes(comptes);
+                if (resultat > 0)
+                {
+                    MessageBox.Show("Ajout Réussi");
+                }
+                else
+                {
+                    MessageBox.Show("L'ajout a échoué");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Un problème s'est produit, veuillez réessayer !!!");
+            }
         }
     }
 }

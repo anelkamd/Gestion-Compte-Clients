@@ -24,7 +24,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
 
         private DataAccess data = new DataAccess();
 
-        public int EnregistrerTransaction(Comptes comptes)
+        public int EnregistrerComptes(Comptes comptes)
         {
             int resultat = 0;
             string strQuery = "INSERT INTO Comptes ( ClientID, Solde) VALUES ( @ClientID, @Solde)";
