@@ -50,9 +50,11 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dbClients).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clientsBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // txtNom
@@ -241,11 +243,23 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources._61167;
+            pictureBox2.Location = new Point(27, 19);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 37);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 14;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
             // FrmClients
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(866, 549);
+            Controls.Add(pictureBox2);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -268,6 +282,7 @@
             ((System.ComponentModel.ISupportInitialize)dbClients).EndInit();
             ((System.ComponentModel.ISupportInitialize)clientsBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -294,5 +309,6 @@
         private DataGridViewTextBoxColumn prenomDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn adresseDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn telephoneDataGridViewTextBoxColumn;
+        private PictureBox pictureBox2;
     }
 }

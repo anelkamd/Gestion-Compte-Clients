@@ -144,7 +144,7 @@ namespace Gestion_Compte_Clients
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -155,6 +155,11 @@ namespace Gestion_Compte_Clients
         private void clientsBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
