@@ -26,5 +26,10 @@ namespace Gestion_Compte_Clients
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Voulais vous confirmer cette transaction ?");
+        }
     }
 }
