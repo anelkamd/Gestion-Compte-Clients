@@ -113,8 +113,8 @@ namespace Gestion_Compte_Clients
                 string connectionString = "Votre_chaine_de_connexion";
 
                 // Requête SQL pour insérer une transaction
-                string queryTransaction = "INSERT INTO Transactions (CompteID, Montant, DateTransaction, TypeTransaction) " +
-                                          "VALUES (@CompteID, @Montant, @DateTransaction, @TypeTransaction)";
+                string queryTransaction = "INSERT INTO Transactions (CompteID,TypeTransaction, Montant, DateTransaction, ) " +
+                                          "VALUES (@CompteID,@TypeTransaction, @Montant, @DateTransaction, )";
 
                 // Requête SQL pour mettre à jour le solde du compte
                 string queryUpdateSolde;
@@ -140,9 +140,9 @@ namespace Gestion_Compte_Clients
                         using (SqlCommand commandTransaction = new SqlCommand(queryTransaction, connection, sqlTransaction))
                         {
                             commandTransaction.Parameters.AddWithValue("@CompteID", compteID);
+                            commandTransaction.Parameters.AddWithValue("@TypeTransaction", typeTransaction);
                             commandTransaction.Parameters.AddWithValue("@Montant", montant);
                             commandTransaction.Parameters.AddWithValue("@DateTransaction", dateTransaction);
-                            commandTransaction.Parameters.AddWithValue("@TypeTransaction", typeTransaction);
                             commandTransaction.ExecuteNonQuery();
                         }
 
