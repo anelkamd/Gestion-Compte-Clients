@@ -63,7 +63,7 @@ namespace Gestion_Compte_Clients
             try
             {
                 // Vérifier que le type de transaction est valide
-                if (transaction.TypeTransaction != "Dépot" && transaction.TypeTransaction != "Retrait")
+                if (transaction.TypeTransaction != "Depot" && transaction.TypeTransaction != "Retrait")
                 {
                     throw new ArgumentException("TypeTransaction doit être 'Dépot' ou 'Retrait'");
                 }
@@ -119,7 +119,7 @@ namespace Gestion_Compte_Clients
                 decimal montant = Convert.ToDecimal(txtMontant.Text);
                 int compteID = Convert.ToInt32(txtNumClient.Text);
                 DateTime dateTransaction = dtTransaction.Value;
-                string typeTransaction = rbDepot.Checked ? "Dépot" : (rbRetrait.Checked ? "Retrait" : null);
+                string typeTransaction = rbDepot.Checked ? "Depot" : (rbRetrait.Checked ? "Retrait" : null);
 
                 if (typeTransaction == null)
                 {
