@@ -120,29 +120,75 @@ namespace Gestion_Compte_Clients
             }
             try
             {
-                Transactions transactions = new Transactions();
+                // Récupérer les valeurs des contrôles
+                decimal montant = Convert.ToDecimal(txtMontant.Text);
+                int compteID = Convert.ToInt32(txtNumClient.Text);
+                DateTime dateTransaction = dtTransaction.Value;
+                string typeTransaction = rbDepot.Checked ? "Dépot" : "Retrait";
 
-                // Appeler bindingClass avec le type de transaction approprié
-                string typeTransaction = rbDepot.Checked ? "Depot" : rbRetrait.Checked ? "Retrait" : "";
-                bindingClass(transactions, typeTransaction);
+                // Chaîne de connexion à la base de données
+                string connectionString = "Votre_chaine_de_connexion";
 
-                Transactions transfertInstance = new Transactions();
+                // Requête SQL pour insérer une transaction
+                string queryTransaction = "INSERT INTO Transactions (CompteID, Montant, DateTransaction, TypeTransaction) " +
+                                          "VALUES (@CompteID, @Montant, @DateTransaction, @TypeTransaction)";
 
-                int resultat = EnregistrerTransaction(transactions);
-                if (resultat > 0)
+                // Requête SQL pour mettre à jour le solde du compte
+                string queryUpdateSolde;
+                if (typeTransaction == "Dépot")
                 {
-                    MessageBox.Show("Transaction Réussie");
+                    queryUpdateSolde = "UPDATE Comptes SET Solde = Solde + @Montant WHERE CompteID = @CompteID";
                 }
                 else
                 {
-                    MessageBox.Show("La Transaction a échoué");
+                    queryUpdateSolde = "UPDATE Comptes SET Solde = Solde - @Montant WHERE CompteID = @CompteID";
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Commencer une transaction SQL
+                    SqlTransaction sqlTransaction = connection.BeginTransaction();
+
+                    try
+                    {
+                        // Insérer la transaction
+                        using (SqlCommand commandTransaction = new SqlCommand(queryTransaction, connection, sqlTransaction))
+                        {
+                            commandTransaction.Parameters.AddWithValue("@CompteID", compteID);
+                            commandTransaction.Parameters.AddWithValue("@Montant", montant);
+                            commandTransaction.Parameters.AddWithValue("@DateTransaction", dateTransaction);
+                            commandTransaction.Parameters.AddWithValue("@TypeTransaction", typeTransaction);
+                            commandTransaction.ExecuteNonQuery();
+                        }
+
+                        // Mettre à jour le solde du compte
+                        using (SqlCommand commandUpdateSolde = new SqlCommand(queryUpdateSolde, connection, sqlTransaction))
+                        {
+                            commandUpdateSolde.Parameters.AddWithValue("@CompteID", compteID);
+                            commandUpdateSolde.Parameters.AddWithValue("@Montant", montant);
+                            commandUpdateSolde.ExecuteNonQuery();
+                        }
+
+                        // Valider la transaction SQL
+                        sqlTransaction.Commit();
+
+                        MessageBox.Show("Transaction enregistrée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Annuler la transaction SQL en cas d'erreur
+                        sqlTransaction.Rollback();
+                        MessageBox.Show("Une erreur est survenue : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Un problème s'est produit, veuillez réessayer !!!\n" + ex.Message);
+                MessageBox.Show("Une erreur est survenue : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }
+

@@ -28,12 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmComptes";
+            label1 = new Label();
+            textBox1 = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
+            label2 = new Label();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(26, 92);
+            label1.Name = "label1";
+            label1.Size = new Size(72, 28);
+            label1.TabIndex = 0;
+            label1.Text = "Solde :";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(104, 92);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(402, 31);
+            textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(206, 139);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(300, 31);
+            dateTimePicker1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(26, 139);
+            label2.Name = "label2";
+            label2.Size = new Size(174, 28);
+            label2.TabIndex = 3;
+            label2.Text = "Date de Creation :";
+            // 
+            // frmComptes
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 486);
+            Controls.Add(label2);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(textBox1);
+            Controls.Add(label1);
+            Name = "frmComptes";
+            Text = "frmComptes";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private TextBox textBox1;
+        private DateTimePicker dateTimePicker1;
+        private Label label2;
     }
 }

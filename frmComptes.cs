@@ -16,5 +16,10 @@ namespace Gestion_Compte_Clients
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
