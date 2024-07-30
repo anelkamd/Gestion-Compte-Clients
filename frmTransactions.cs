@@ -68,9 +68,9 @@ namespace Gestion_Compte_Clients
                     string query = "INSERT INTO Transactions (CompteID, TypeTransaction, Montant, DateTransaction) VALUES (@CompteID,@TypeTransaction, @Montant, @DateTransaction)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
+                        command.Parameters.AddWithValue("@CompteID", transaction.CompteID);
                         command.Parameters.AddWithValue("@TypeTransaction", transaction.TypeTransaction);
                         command.Parameters.AddWithValue("@Montant", transaction.Montant);
-                        command.Parameters.AddWithValue("@CompteID", transaction.CompteID);
                         command.Parameters.AddWithValue("@DateTransaction", transaction.DateTransaction);
 
                         return command.ExecuteNonQuery();
@@ -79,12 +79,12 @@ namespace Gestion_Compte_Clients
             }
             catch (SqlException sqlEx)
             {
-                MessageBox.Show("Erreur SQL: " + sqlEx.Message);
+                MessageBox.Show("Erreur SQL: ");
                 return -1;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur: " + ex.Message);
+                MessageBox.Show("Erreur: " );
                 return -1;
             }
         }
