@@ -110,6 +110,7 @@
             btnTransactions.SizeMode = PictureBoxSizeMode.Zoom;
             btnTransactions.TabIndex = 3;
             btnTransactions.TabStop = false;
+            btnTransactions.Click += btnTransactions_Click;
             // 
             // btnClients
             // 

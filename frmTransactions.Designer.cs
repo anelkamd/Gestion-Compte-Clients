@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransactions));
             label1 = new Label();
             txtMontant = new TextBox();
-            chkRetrait = new CheckBox();
-            chkDepot = new CheckBox();
             label2 = new Label();
             dtTransaction = new DateTimePicker();
             label3 = new Label();
             dataGridView1 = new DataGridView();
             button2 = new Button();
             button1 = new Button();
+            rbDepot = new RadioButton();
+            rbRetrait = new RadioButton();
+            txtNumClient = new TextBox();
+            label4 = new Label();
+            txtTransaction = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -55,31 +59,8 @@
             // 
             txtMontant.Location = new Point(143, 113);
             txtMontant.Name = "txtMontant";
-            txtMontant.Size = new Size(329, 31);
+            txtMontant.Size = new Size(376, 31);
             txtMontant.TabIndex = 1;
-            // 
-            // chkRetrait
-            // 
-            chkRetrait.AutoSize = true;
-            chkRetrait.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            chkRetrait.Location = new Point(374, 175);
-            chkRetrait.Name = "chkRetrait";
-            chkRetrait.Size = new Size(98, 32);
-            chkRetrait.TabIndex = 2;
-            chkRetrait.Text = "Retrait";
-            chkRetrait.UseVisualStyleBackColor = true;
-            // 
-            // chkDepot
-            // 
-            chkDepot.AutoSize = true;
-            chkDepot.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            chkDepot.Location = new Point(259, 175);
-            chkDepot.Name = "chkDepot";
-            chkDepot.Size = new Size(91, 32);
-            chkDepot.TabIndex = 3;
-            chkDepot.Text = "Depot";
-            chkDepot.UseVisualStyleBackColor = true;
-            chkDepot.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // label2
             // 
@@ -95,7 +76,7 @@
             // 
             dtTransaction.Location = new Point(177, 227);
             dtTransaction.Name = "dtTransaction";
-            dtTransaction.Size = new Size(295, 31);
+            dtTransaction.Size = new Size(342, 31);
             dtTransaction.TabIndex = 5;
             // 
             // label3
@@ -142,23 +123,78 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // rbDepot
+            // 
+            rbDepot.AutoSize = true;
+            rbDepot.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbDepot.Location = new Point(560, 61);
+            rbDepot.Name = "rbDepot";
+            rbDepot.Size = new Size(90, 32);
+            rbDepot.TabIndex = 16;
+            rbDepot.TabStop = true;
+            rbDepot.Text = "Depot";
+            rbDepot.UseVisualStyleBackColor = true;
+            // 
+            // rbRetrait
+            // 
+            rbRetrait.AutoSize = true;
+            rbRetrait.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbRetrait.Location = new Point(667, 61);
+            rbRetrait.Name = "rbRetrait";
+            rbRetrait.Size = new Size(97, 32);
+            rbRetrait.TabIndex = 17;
+            rbRetrait.TabStop = true;
+            rbRetrait.Text = "Retrait";
+            rbRetrait.UseVisualStyleBackColor = true;
+            // 
+            // txtNumClient
+            // 
+            txtNumClient.Location = new Point(192, 62);
+            txtNumClient.Name = "txtNumClient";
+            txtNumClient.Size = new Size(327, 31);
+            txtNumClient.TabIndex = 19;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(28, 62);
+            label4.Name = "label4";
+            label4.Size = new Size(158, 31);
+            label4.TabIndex = 18;
+            label4.Text = "Num Compte :";
+            // 
+            // txtTransaction
+            // 
+            txtTransaction.Font = new Font("Poppins Thin", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTransaction.Location = new Point(260, 170);
+            txtTransaction.Name = "txtTransaction";
+            txtTransaction.Size = new Size(259, 31);
+            txtTransaction.TabIndex = 20;
+            txtTransaction.Text = "Depot ou Retrait";
+            // 
             // frmTransactions
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(799, 572);
+            Controls.Add(txtTransaction);
+            Controls.Add(txtNumClient);
+            Controls.Add(label4);
+            Controls.Add(rbRetrait);
+            Controls.Add(rbDepot);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(label3);
             Controls.Add(dtTransaction);
             Controls.Add(label2);
-            Controls.Add(chkDepot);
-            Controls.Add(chkRetrait);
             Controls.Add(txtMontant);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmTransactions";
-            Text = "frmTransactions";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Les Transactions";
             Load += frmTransactions_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -177,5 +213,10 @@
         private DataGridView dataGridView1;
         private Button button2;
         private Button button1;
+        private RadioButton rbDepot;
+        private RadioButton rbRetrait;
+        private TextBox txtNumClient;
+        private Label label4;
+        private TextBox txtTransaction;
     }
 }

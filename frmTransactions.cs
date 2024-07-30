@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gestion_Compte_Clients.Mes_Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace Gestion_Compte_Clients
         public frmTransactions()
         {
             InitializeComponent();
+        }
+
+        private void bindingClass(Transactions transactions)
+        {
+            transactions.Montant = Convert.ToDecimal(txtMontant.Text);
+            transactions.CompteID = Convert.ToInt32(txtNumClient.Text);
+            transactions.DateTransaction = dtTransaction.Value;
+            transactions.TypeTransaction = txtTransaction.Text;
+            
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
