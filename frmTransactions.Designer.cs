@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransactions));
             label1 = new Label();
             txtMontant = new TextBox();
@@ -44,9 +45,16 @@
             pictureBox1 = new PictureBox();
             label5 = new Label();
             pictureBox2 = new PictureBox();
+            transactionsBindingSource = new BindingSource(components);
+            transactionIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            compteIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            typeTransactionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            montantDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dateTransactionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)transactionsBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -95,11 +103,14 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { transactionIDDataGridViewTextBoxColumn, compteIDDataGridViewTextBoxColumn, typeTransactionDataGridViewTextBoxColumn, montantDataGridViewTextBoxColumn, dateTransactionDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = transactionsBindingSource;
             dataGridView1.Location = new Point(28, 297);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(746, 188);
+            dataGridView1.Size = new Size(815, 188);
             dataGridView1.TabIndex = 7;
             // 
             // button2
@@ -132,6 +143,7 @@
             // rbDepot
             // 
             rbDepot.AutoSize = true;
+            rbDepot.Cursor = Cursors.Hand;
             rbDepot.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rbDepot.Location = new Point(268, 189);
             rbDepot.Name = "rbDepot";
@@ -144,6 +156,7 @@
             // rbRetrait
             // 
             rbRetrait.AutoSize = true;
+            rbRetrait.Cursor = Cursors.Hand;
             rbRetrait.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rbRetrait.Location = new Point(375, 189);
             rbRetrait.Name = "rbRetrait";
@@ -172,10 +185,11 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Cursor = Cursors.No;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(524, 18);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(274, 255);
+            pictureBox1.Size = new Size(319, 256);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
@@ -192,6 +206,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = Properties.Resources._61167;
             pictureBox2.Location = new Point(28, 16);
             pictureBox2.Name = "pictureBox2";
@@ -201,11 +216,55 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
+            // transactionsBindingSource
+            // 
+            transactionsBindingSource.DataSource = typeof(Mes_Classes.Transactions);
+            // 
+            // transactionIDDataGridViewTextBoxColumn
+            // 
+            transactionIDDataGridViewTextBoxColumn.DataPropertyName = "TransactionID";
+            transactionIDDataGridViewTextBoxColumn.HeaderText = "TransactionID";
+            transactionIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            transactionIDDataGridViewTextBoxColumn.Name = "transactionIDDataGridViewTextBoxColumn";
+            transactionIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // compteIDDataGridViewTextBoxColumn
+            // 
+            compteIDDataGridViewTextBoxColumn.DataPropertyName = "CompteID";
+            compteIDDataGridViewTextBoxColumn.HeaderText = "CompteID";
+            compteIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            compteIDDataGridViewTextBoxColumn.Name = "compteIDDataGridViewTextBoxColumn";
+            compteIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // typeTransactionDataGridViewTextBoxColumn
+            // 
+            typeTransactionDataGridViewTextBoxColumn.DataPropertyName = "TypeTransaction";
+            typeTransactionDataGridViewTextBoxColumn.HeaderText = "TypeTransaction";
+            typeTransactionDataGridViewTextBoxColumn.MinimumWidth = 8;
+            typeTransactionDataGridViewTextBoxColumn.Name = "typeTransactionDataGridViewTextBoxColumn";
+            typeTransactionDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // montantDataGridViewTextBoxColumn
+            // 
+            montantDataGridViewTextBoxColumn.DataPropertyName = "Montant";
+            montantDataGridViewTextBoxColumn.HeaderText = "Montant";
+            montantDataGridViewTextBoxColumn.MinimumWidth = 8;
+            montantDataGridViewTextBoxColumn.Name = "montantDataGridViewTextBoxColumn";
+            montantDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dateTransactionDataGridViewTextBoxColumn
+            // 
+            dateTransactionDataGridViewTextBoxColumn.DataPropertyName = "DateTransaction";
+            dateTransactionDataGridViewTextBoxColumn.HeaderText = "DateTransaction";
+            dateTransactionDataGridViewTextBoxColumn.MinimumWidth = 8;
+            dateTransactionDataGridViewTextBoxColumn.Name = "dateTransactionDataGridViewTextBoxColumn";
+            dateTransactionDataGridViewTextBoxColumn.Width = 150;
+            // 
             // frmTransactions
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(799, 541);
+            ClientSize = new Size(873, 541);
             Controls.Add(pictureBox2);
             Controls.Add(label5);
             Controls.Add(pictureBox1);
@@ -229,6 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)transactionsBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -252,5 +312,11 @@
         private PictureBox pictureBox1;
         private Label label5;
         private PictureBox pictureBox2;
+        private DataGridViewTextBoxColumn transactionIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn compteIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn typeTransactionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn montantDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dateTransactionDataGridViewTextBoxColumn;
+        private BindingSource transactionsBindingSource;
     }
 }
