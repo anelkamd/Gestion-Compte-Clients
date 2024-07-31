@@ -186,6 +186,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Cursor = Cursors.No;
             pictureBox1.Image = Properties.Resources.avatar_default_icon;
             pictureBox1.Location = new Point(529, 80);
             pictureBox1.Name = "pictureBox1";
@@ -248,6 +249,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = Properties.Resources._61167;
             pictureBox2.Location = new Point(27, 19);
             pictureBox2.Name = "pictureBox2";
