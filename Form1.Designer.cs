@@ -32,6 +32,7 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
+            pictureBox9 = new PictureBox();
             btnActivites = new PictureBox();
             btnTransactions = new PictureBox();
             btnClients = new PictureBox();
@@ -41,10 +42,10 @@
             pictureBox6 = new PictureBox();
             pictureBox7 = new PictureBox();
             pictureBox8 = new PictureBox();
-            pictureBox9 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnActivites).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnTransactions).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClients).BeginInit();
@@ -54,7 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -91,6 +91,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(294, 1027);
             panel1.TabIndex = 2;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Cursor = Cursors.Hand;
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(54, 538);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(213, 77);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 4;
+            pictureBox9.TabStop = false;
+            pictureBox9.Click += pictureBox9_Click;
             // 
             // btnActivites
             // 
@@ -150,9 +162,9 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.Group_1000002356__1_;
-            pictureBox5.Location = new Point(1125, 72);
+            pictureBox5.Location = new Point(1086, 72);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(421, 691);
+            pictureBox5.Size = new Size(460, 691);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 3;
             pictureBox5.TabStop = false;
@@ -162,7 +174,7 @@
             pictureBox6.Image = Properties.Resources.Group_1000002357;
             pictureBox6.Location = new Point(267, 72);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(911, 274);
+            pictureBox6.Size = new Size(911, 280);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 4;
             pictureBox6.TabStop = false;
@@ -170,7 +182,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = Properties.Resources.Group_1000002358;
-            pictureBox7.Location = new Point(264, 342);
+            pictureBox7.Location = new Point(264, 354);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(914, 318);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
@@ -180,24 +192,12 @@
             // pictureBox8
             // 
             pictureBox8.Image = Properties.Resources.Group_1000002359;
-            pictureBox8.Location = new Point(264, 663);
+            pictureBox8.Location = new Point(264, 671);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(914, 100);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 6;
             pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Cursor = Cursors.Hand;
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(54, 538);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(213, 77);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 4;
-            pictureBox9.TabStop = false;
-            pictureBox9.Click += pictureBox9_Click;
             // 
             // Form1
             // 
@@ -220,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnActivites).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnTransactions).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClients).EndInit();
@@ -229,7 +230,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ResumeLayout(false);
         }
 

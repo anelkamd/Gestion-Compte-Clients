@@ -123,7 +123,7 @@ namespace Gestion_Compte_Clients
 
                 if (typeTransaction == null)
                 {
-                    MessageBox.Show("Veuillez sélectionner le type de transaction.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Veuillez sélectionner le type de transaction.");
                     return;
                 }
 
