@@ -145,12 +145,12 @@ namespace Gestion_Compte_Clients
                 }
                 else
                 {
-                    MessageBox.Show("L'enregistrement de la transaction a échoué.", "Échec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("L'enregistrement de la transaction a échoué.", "Échec", MessageBoxButtons.OK);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Une erreur est survenue : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Une erreur est survenue : " + ex.Message, "Erreur", MessageBoxButtons.OK);
             }
         }
 
