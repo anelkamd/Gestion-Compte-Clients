@@ -65,7 +65,7 @@ namespace Gestion_Compte_Clients
                 // Vérifier que le type de transaction est valide
                 if (transaction.TypeTransaction != "Depot" && transaction.TypeTransaction != "Retrait")
                 {
-                    //throw new ArgumentException("TypeTransaction doit être 'Dépot' ou 'Retrait'");
+                    throw new ArgumentException("Le Type de Transaction doit etre cocher apre avoir remplie le formulaire");
                 }
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
