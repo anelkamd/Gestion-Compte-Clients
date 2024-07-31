@@ -141,7 +141,7 @@ namespace Gestion_Compte_Clients
 
                 if (resultat > 0)
                 {
-                    MessageBox.Show("Transaction enregistrée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Transaction enregistrée avec succès.");
                 }
                 else
                 {
