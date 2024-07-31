@@ -35,6 +35,11 @@
             dtCreation = new DateTimePicker();
             label2 = new Label();
             dataGridView1 = new DataGridView();
+            compteIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clientIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            soldeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dateCreationDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            comptesBindingSource = new BindingSource(components);
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -43,15 +48,10 @@
             txtClientID = new TextBox();
             label3 = new Label();
             pictureBox2 = new PictureBox();
-            comptesBindingSource = new BindingSource(components);
-            compteIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clientIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            soldeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dateCreationDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)comptesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)comptesBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -104,6 +104,42 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(666, 225);
             dataGridView1.TabIndex = 4;
+            // 
+            // compteIDDataGridViewTextBoxColumn
+            // 
+            compteIDDataGridViewTextBoxColumn.DataPropertyName = "CompteID";
+            compteIDDataGridViewTextBoxColumn.HeaderText = "CompteID";
+            compteIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            compteIDDataGridViewTextBoxColumn.Name = "compteIDDataGridViewTextBoxColumn";
+            compteIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            clientIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            clientIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // soldeDataGridViewTextBoxColumn
+            // 
+            soldeDataGridViewTextBoxColumn.DataPropertyName = "Solde";
+            soldeDataGridViewTextBoxColumn.HeaderText = "Solde";
+            soldeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            soldeDataGridViewTextBoxColumn.Name = "soldeDataGridViewTextBoxColumn";
+            soldeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dateCreationDataGridViewTextBoxColumn
+            // 
+            dateCreationDataGridViewTextBoxColumn.DataPropertyName = "DateCreation";
+            dateCreationDataGridViewTextBoxColumn.HeaderText = "DateCreation";
+            dateCreationDataGridViewTextBoxColumn.MinimumWidth = 8;
+            dateCreationDataGridViewTextBoxColumn.Name = "dateCreationDataGridViewTextBoxColumn";
+            dateCreationDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // comptesBindingSource
+            // 
+            comptesBindingSource.DataSource = typeof(Mes_Classes.Comptes);
             // 
             // button3
             // 
@@ -191,6 +227,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = Properties.Resources._61167;
             pictureBox2.Location = new Point(45, 27);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
@@ -200,42 +237,6 @@
             pictureBox2.TabIndex = 25;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
-            // 
-            // comptesBindingSource
-            // 
-            comptesBindingSource.DataSource = typeof(Mes_Classes.Comptes);
-            // 
-            // compteIDDataGridViewTextBoxColumn
-            // 
-            compteIDDataGridViewTextBoxColumn.DataPropertyName = "CompteID";
-            compteIDDataGridViewTextBoxColumn.HeaderText = "CompteID";
-            compteIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            compteIDDataGridViewTextBoxColumn.Name = "compteIDDataGridViewTextBoxColumn";
-            compteIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // clientIDDataGridViewTextBoxColumn
-            // 
-            clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
-            clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
-            clientIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            clientIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // soldeDataGridViewTextBoxColumn
-            // 
-            soldeDataGridViewTextBoxColumn.DataPropertyName = "Solde";
-            soldeDataGridViewTextBoxColumn.HeaderText = "Solde";
-            soldeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            soldeDataGridViewTextBoxColumn.Name = "soldeDataGridViewTextBoxColumn";
-            soldeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // dateCreationDataGridViewTextBoxColumn
-            // 
-            dateCreationDataGridViewTextBoxColumn.DataPropertyName = "DateCreation";
-            dateCreationDataGridViewTextBoxColumn.HeaderText = "DateCreation";
-            dateCreationDataGridViewTextBoxColumn.MinimumWidth = 8;
-            dateCreationDataGridViewTextBoxColumn.Name = "dateCreationDataGridViewTextBoxColumn";
-            dateCreationDataGridViewTextBoxColumn.Width = 150;
             // 
             // frmComptes
             // 
@@ -262,9 +263,9 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Les Comptes";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)comptesBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)comptesBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
