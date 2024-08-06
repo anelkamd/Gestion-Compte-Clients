@@ -279,6 +279,7 @@
             Controls.Add(txtPrenom);
             Controls.Add(label1);
             Controls.Add(txtNom);
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmClients";
             StartPosition = FormStartPosition.CenterScreen;

@@ -80,7 +80,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(225, 243, 255);
+            panel1.BackColor = Color.FromArgb(209, 255, 219);
             panel1.Controls.Add(pictureBox9);
             panel1.Controls.Add(btnActivites);
             panel1.Controls.Add(btnTransactions);
@@ -152,7 +152,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(10, -121);
+            pictureBox3.Location = new Point(29, -115);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(282, 381);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -215,7 +215,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Banque ISIG";
+            Text = "Banque D’étudiant";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
