@@ -40,7 +40,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
 
         public bool VerifyPassword(string password)
         {
-            // Compare le mot de passe haché stocké avec le hachage du mot de passe entré
+            // Compare le mot de passe haché stocké avec le hachage du mot de passe entrée
             string passwordHash = HashPassword(password);
             return PasswordHash == passwordHash;
         }
