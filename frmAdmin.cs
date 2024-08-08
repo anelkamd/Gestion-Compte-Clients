@@ -16,5 +16,10 @@ namespace Gestion_Compte_Clients
         {
             InitializeComponent();
         }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
