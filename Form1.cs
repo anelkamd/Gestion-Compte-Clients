@@ -47,5 +47,11 @@ namespace Gestion_Compte_Clients
             frmComptes frmComptes = new frmComptes();
             frmComptes.Show();
         }
+
+        private void btnActivites_Click(object sender, EventArgs e)
+        {
+            frmAdmin frmAdmin = new frmAdmin();
+            frmAdmin.Show();
+        }
     }
 }

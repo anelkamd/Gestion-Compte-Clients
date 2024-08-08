@@ -23,25 +23,25 @@ namespace Gestion_Compte_Clients
 
         private void bindingClass(Admins admins)
         {
-            admins. = Convert.ToString(txtNom.Text);
-            clients.Prenom = Convert.ToString(txtPrenom.Text);
-            clients.Adresse = Convert.ToString(txtAdresse.Text);
-            clients.Telephone = Convert.ToString(txtTelephone.Text);
+            admins.Username = Convert.ToString(txtUser.Text);
+            admins.PasswordHash = Convert.ToString(txtPassword.Text);
+            admins.Email = Convert.ToString(txtEmail.Text);
+            admins.CreatedAt = dtAjoutAdmin.Value;
         }
 
-        private void EnregistrerClient(Clients clients)
+        private void EnregistrerAdmin(Admins admins)
         {
             string connectionString = "Votre_chaine_de_connexion";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Clients ( Nom, Prenom, Adresse, Telephone) VALUES ( @Nom, @Prenom, @Adresse, @Telephone)";
+                string query = "INSERT INTO Admins ( Username, PasswordHash, Email, CreateAt) VALUES ( @Username, @PasswordHash, @Email, @CreatedAt)";
                 SqlCommand command = new SqlCommand(query, connection);
 
-                command.Parameters.AddWithValue("@Nom", clients.Nom);
-                command.Parameters.AddWithValue("@Prenom", clients.Prenom);
-                command.Parameters.AddWithValue("@Adresse", clients.Adresse);
-                command.Parameters.AddWithValue("@Telephone", clients.Telephone);
+                command.Parameters.AddWithValue("@Username", admins.Username);
+                command.Parameters.AddWithValue("@Prenom", admins.PasswordHash);
+                command.Parameters.AddWithValue("@Adresse", admins.Email);
+                command.Parameters.AddWithValue("@Telephone", admins.CreatedAt);
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -53,6 +53,32 @@ namespace Gestion_Compte_Clients
         private void frmAdmin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Admins admins = new Admins();
+
+                bindingClass(admins);
+
+                Admins AdminInstance = new Admins();
+
+                int resultat = AdminInstance.EnregistrerAdmin(admins);
+                if (resultat > 0)
+                {
+                    MessageBox.Show("Ajout Réussi");
+                }
+                else
+                {
+                    MessageBox.Show("L'ajout a échoué");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Un problème s'est produit, veuillez réessayer !!!");
+            }
         }
     }
 }

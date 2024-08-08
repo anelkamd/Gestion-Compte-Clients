@@ -36,6 +36,9 @@
             label3 = new Label();
             dtAjoutAdmin = new DateTimePicker();
             label4 = new Label();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -106,11 +109,54 @@
             label4.TabIndex = 7;
             label4.Text = "Date de l'ajout :";
             // 
+            // button3
+            // 
+            button3.BackColor = Color.Red;
+            button3.Cursor = Cursors.Hand;
+            button3.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(303, 404);
+            button3.Name = "button3";
+            button3.Size = new Size(129, 34);
+            button3.TabIndex = 16;
+            button3.Text = "Supprimer";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.Cursor = Cursors.Hand;
+            button2.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(168, 404);
+            button2.Name = "button2";
+            button2.Size = new Size(129, 34);
+            button2.TabIndex = 15;
+            button2.Text = "Modifier";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.DeepSkyBlue;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(33, 404);
+            button1.Name = "button1";
+            button1.Size = new Size(129, 34);
+            button1.TabIndex = 14;
+            button1.Text = "Enregistrer";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // frmAdmin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(dtAjoutAdmin);
             Controls.Add(txtEmail);
@@ -136,5 +182,8 @@
         private Label label3;
         private DateTimePicker dtAjoutAdmin;
         private Label label4;
+        private Button button3;
+        private Button button2;
+        private Button button1;
     }
 }

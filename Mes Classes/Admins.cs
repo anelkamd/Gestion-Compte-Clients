@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
 
 namespace Gestion_Compte_Clients.Mes_Classes
 {
@@ -14,6 +15,10 @@ namespace Gestion_Compte_Clients.Mes_Classes
         public string PasswordHash { get; set; }
         public string Email { get; set; }
         public DateTime CreatedAt { get; set; }
+
+        public Admins() { }
+
+        private DataAccess data = new DataAccess();
 
         public Admins(int adminID, string username, string passwordHash, string email)
         {
@@ -48,6 +53,41 @@ namespace Gestion_Compte_Clients.Mes_Classes
             Console.WriteLine($"CreatedAt: {CreatedAt}");
         }
 
+        public int EnregistrerAdmin(Admins admins)
+        {
+            int resultat = 0;
+            string strQuery = "INSERT INTO Admin ( Username, PasswordHash, Email, CreatedAt) VALUES ( @Username, @PasswordHash, @Email, @CreatedAt)";
 
+            if (data.OpenConnection())
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand(strQuery, data.conn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@Username", admins.Username);
+                        cmd.Parameters.AddWithValue("@PasswordHash", admins.PasswordHash);
+                        cmd.Parameters.AddWithValue("@Email", admins.Email);
+                        cmd.Parameters.AddWithValue("@CreatedAt", admins.CreatedAt);
+
+                        resultat = cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erreur lors de l'Enregistrement : {ex.Message}");
+                }
+                finally
+                {
+                    data.CloseConnection();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Impossible d'ouvrir la connexion à la base de données.");
+            }
+
+            return resultat;
+        }
     }
 }
