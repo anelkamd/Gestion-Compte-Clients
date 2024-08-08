@@ -26,8 +26,8 @@ namespace Gestion_Compte_Clients
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            string username = usernameTextBox.Text;
-            string password = passwordTextBox.Text;
+            string username = txtUserName.Text;
+            string password = txtPassword.Text;
 
             if (IsValidAdmin(username, password))
             {
