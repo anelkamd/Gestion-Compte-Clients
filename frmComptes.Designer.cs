@@ -104,6 +104,7 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(666, 225);
             dataGridView1.TabIndex = 4;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // compteIDDataGridViewTextBoxColumn
             // 

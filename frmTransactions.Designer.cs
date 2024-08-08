@@ -112,6 +112,7 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(815, 188);
             dataGridView1.TabIndex = 7;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // transactionIDDataGridViewTextBoxColumn
             // 

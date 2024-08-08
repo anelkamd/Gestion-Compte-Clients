@@ -97,5 +97,10 @@ namespace Gestion_Compte_Clients
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
