@@ -75,7 +75,7 @@ namespace Gestion_Compte_Clients
         private bool VerifyPassword(string password, string storedHash)
         {
             // Comparer le mot de passe haché stocké avec le hachage du mot de passe entré
-            string passwordHash = Admin.HashPassword(password);
+            string passwordHash = Admins.HashPassword(password);
             return storedHash == passwordHash;
         }
     }

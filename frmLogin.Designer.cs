@@ -28,19 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            txtUserName = new TextBox();
+            txtPassword = new TextBox();
             SuspendLayout();
+            // 
+            // txtUserName
+            // 
+            txtUserName.Location = new Point(221, 90);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(150, 31);
+            txtUserName.TabIndex = 0;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(221, 153);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(150, 31);
+            txtPassword.TabIndex = 1;
             // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUserName);
             Name = "frmLogin";
             Text = "frmLogin";
             Load += frmLogin_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox txtUserName;
+        private TextBox txtPassword;
     }
 }

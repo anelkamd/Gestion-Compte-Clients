@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUser = new TextBox();
+            txtPassword = new TextBox();
             label2 = new Label();
-            textBox3 = new TextBox();
+            txtEmail = new TextBox();
             label3 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dtAjoutAdmin = new DateTimePicker();
             label4 = new Label();
             SuspendLayout();
             // 
@@ -48,19 +48,19 @@
             label1.TabIndex = 0;
             label1.Text = "Nom ( Username ) :";
             // 
-            // textBox1
+            // txtUser
             // 
-            textBox1.Location = new Point(223, 64);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(270, 31);
-            textBox1.TabIndex = 1;
+            txtUser.Location = new Point(223, 64);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(270, 31);
+            txtUser.TabIndex = 1;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.Location = new Point(186, 103);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(307, 31);
-            textBox2.TabIndex = 3;
+            txtPassword.Location = new Point(186, 103);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(307, 31);
+            txtPassword.TabIndex = 3;
             // 
             // label2
             // 
@@ -72,12 +72,12 @@
             label2.TabIndex = 2;
             label2.Text = "Mots de Passe :";
             // 
-            // textBox3
+            // txtEmail
             // 
-            textBox3.Location = new Point(105, 142);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(388, 31);
-            textBox3.TabIndex = 5;
+            txtEmail.Location = new Point(105, 142);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(388, 31);
+            txtEmail.TabIndex = 5;
             // 
             // label3
             // 
@@ -89,12 +89,12 @@
             label3.TabIndex = 4;
             label3.Text = "Email :";
             // 
-            // dateTimePicker1
+            // dtAjoutAdmin
             // 
-            dateTimePicker1.Location = new Point(193, 184);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 31);
-            dateTimePicker1.TabIndex = 6;
+            dtAjoutAdmin.Location = new Point(193, 184);
+            dtAjoutAdmin.Name = "dtAjoutAdmin";
+            dtAjoutAdmin.Size = new Size(300, 31);
+            dtAjoutAdmin.TabIndex = 6;
             // 
             // label4
             // 
@@ -112,12 +112,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label4);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox3);
+            Controls.Add(dtAjoutAdmin);
+            Controls.Add(txtEmail);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(txtPassword);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(txtUser);
             Controls.Add(label1);
             Name = "frmAdmin";
             Text = "frmAdmin";
@@ -129,12 +129,12 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUser;
+        private TextBox txtPassword;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox txtEmail;
         private Label label3;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtAjoutAdmin;
         private Label label4;
     }
 }
