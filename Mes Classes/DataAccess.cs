@@ -11,7 +11,7 @@ namespace Gestion_Compte_Clients.Mes_Classes
     {
         public SqlConnection conn = null;
 
-        String connectionString = "Data Source=ANELKA-MD; Initial Catalog=Gestion_Compte_Clients; User ID=Anelka; Password=26355217; Encrypt=false";
+        String connectionString = "Data Source=ANELKA-MD; Initial Catalog=Gestion_Compte_Clients; User ID=; Password=; Encrypt=false";
         public bool OpenConnection()
         {
             try
